@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asha Physiotherapy - Healing Through Movement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .active-nav {
+            color: #3b82f6; /* blue-500 */
+            font-weight: 600;
+        }
+        /* Simple transition for sections */
+        .page-section {
+            transition: opacity 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header and Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-blue-600 nav-link">
+                Asha Physiotherapy
+            </a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link hover:text-blue-600 active-nav">Home</a>
+                <a href="#about" class="nav-link hover:text-blue-600">About</a>
+                <a href="#services" class="nav-link hover:text-blue-600">Services</a>
+                <a href="#contact" class="nav-link hover:text-blue-600">Contact</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white">
+            <a href="#home" class="block py-2 px-6 text-sm hover:bg-gray-100 nav-link-mobile">Home</a>
+            <a href="#about" class="block py-2 px-6 text-sm hover:bg-gray-100 nav-link-mobile">About</a>
+            <a href="#services" class="block py-2 px-6 text-sm hover:bg-gray-100 nav-link-mobile">Services</a>
+            <a href="#contact" class="block py-2 px-6 text-sm hover:bg-gray-100 nav-link-mobile">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="page-section">
+            <div class="bg-blue-600 text-white">
+                <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                    <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Your Partner in Recovery and Wellness</h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">At Asha Physiotherapy, we provide personalized care to help you regain movement, reduce pain, and return to the activities you love.</p>
+                    <a href="#contact" class="bg-white text-blue-600 font-bold py-3 px-8 rounded-full hover:bg-blue-100 transition duration-300">Book an Appointment</a>
+                </div>
+            </div>
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Welcome to Our Clinic</h2>
+                    <p class="text-gray-600 mt-2">Dedicated care for a healthier, more active you.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-2">Expert Therapists</h3>
+                        <p class="text-gray-600">Our certified physiotherapists use evidence-based techniques to create effective treatment plans tailored to you.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-2">Personalized Plans</h3>
+                        <p class="text-gray-600">We don't believe in one-size-fits-all. Your recovery journey is unique, and so is your treatment plan.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="font-bold text-xl mb-2">Modern Facility</h3>
+                        <p class="text-gray-600">Our clinic is equipped with state-of-the-art technology to ensure you receive the best possible care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="page-section hidden">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">About Asha Physiotherapy</h2>
+                    <p class="text-gray-600 mt-2">Our mission, our values, and our team.</p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <div class="grid md:grid-cols-2 gap-12 items-center">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-4">Our Mission: Hope and Healing</h3>
+                            <p class="text-gray-600 mb-4">Our mission is to provide the highest quality physiotherapy services with compassion and care. We are dedicated to helping our patients achieve their health and wellness goals through personalized treatment plans and patient education. 'Asha', meaning 'hope', is at the core of everything we do.</p>
+                            <p class="text-gray-600">We believe in empowering our patients by giving them the knowledge and tools to manage their conditions and prevent future injuries. Your health is our priority, and we are committed to supporting you every step of the way.</p>
+                        </div>
+                        <div>
+                            <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Our+Team" alt="Asha Physiotherapy Team" class="rounded-lg shadow-md">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="page-section hidden">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Our Services</h2>
+                    <p class="text-gray-600 mt-2">A comprehensive range of treatments to meet your needs.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-xl mb-2">Sports Injury Rehabilitation</h3>
+                        <p class="text-gray-600">Specialized programs to help athletes recover from injuries and enhance performance safely.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-xl mb-2">Post-Operative Care</h3>
+                        <p class="text-gray-600">Structured rehabilitation to ensure a smooth and successful recovery after surgery.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-xl mb-2">Back & Neck Pain Treatment</h3>
+                        <p class="text-gray-600">Effective solutions for chronic or acute pain in the back and neck, using manual therapy and exercises.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-xl mb-2">Neurological Physiotherapy</h3>
+                        <p class="text-gray-600">Care for individuals with neurological conditions like stroke, Parkinson's, or spinal cord injuries.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-xl mb-2">Geriatric Care</h3>
+                        <p class="text-gray-600">Improving mobility, balance, and quality of life for our elderly patients.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="font-bold text-xl mb-2">Home Visits</h3>
+                        <p class="text-gray-600">We offer physiotherapy services in the comfort of your own home for those with mobility challenges.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="page-section hidden">
+            <div class="container mx-auto px-6 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-gray-900">Get In Touch</h2>
+                    <p class="text-gray-600 mt-2">We're here to help. Reach out to us to schedule your appointment.</p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg max-w-4xl mx-auto">
+                    <div class="grid md:grid-cols-2 gap-12">
+                        <!-- Contact Form -->
+                        <form>
+                            <div class="mb-4">
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition duration-300">Send Message</button>
+                        </form>
+                        <!-- Contact Info -->
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Our Address</h3>
+                                <p class="text-gray-600 mt-1">123 Health Street, Kathmandu, Nepal</p>
+                            </div>
+                             <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Email Us</h3>
+                                <p class="text-gray-600 mt-1"><a href="mailto:info@ashaphysio.com.np" class="text-blue-600 hover:underline">info@ashaphysio.com.np</a></p>
+                            </div>
+                             <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Call Us</h3>
+                                <p class="text-gray-600 mt-1">+977 980-0000000</p>
+                            </div>
+                             <div>
+                                <h3 class="text-lg font-semibold text-gray-900">Opening Hours</h3>
+                                <p class="text-gray-600 mt-1">Sunday - Friday: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-600">Saturday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2024 Asha Physiotherapy. All Rights Reserved.</p>
+            <p class="text-sm text-gray-400 mt-2">Designed with care.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sections = document.querySelectorAll('.page-section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const mobileNavLinks = document.querySelectorAll('.nav-link-mobile');
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // Function to handle navigation
+            function navigate(hash) {
+                // Hide all sections
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+
+                // Show the target section
+                const targetSection = document.querySelector(hash);
+                if (targetSection) {
+                    targetSection.classList.remove('hidden');
+                }
+
+                // Update active link style for desktop
+                navLinks.forEach(link => {
+                    if (link.getAttribute('href') === hash) {
+                        link.classList.add('active-nav');
+                    } else {
+                        link.classList.remove('active-nav');
+                    }
+                });
+                
+                // Close mobile menu after navigation
+                mobileMenu.classList.add('hidden');
+            }
+
+            // Event listeners for desktop navigation
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const hash = this.getAttribute('href');
+                    navigate(hash);
+                    // Smooth scroll to the top of the section
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Event listeners for mobile navigation
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const hash = this.getAttribute('href');
+                    navigate(hash);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+
+            // Mobile menu toggle
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+        });
+    </script>
+
+</body>
+</html>
