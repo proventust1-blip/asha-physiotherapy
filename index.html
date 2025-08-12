@@ -19,14 +19,39 @@
         line-height: 1.8;
       }
       .navbar-brand img {
-        max-height: 80px;
+        max-height: 90px; /* Increased logo size */
       }
-      .navbar-brand span {
-          font-size: 1.25rem;
+      .brand-title {
+          font-size: 1.5rem; /* Increased brand name size */
+          font-weight: 700;
+          display: block;
+          line-height: 1;
+      }
+      .brand-slogan {
+          font-size: 0.8rem; /* Slogan font size */
+          font-weight: 400;
+          display: block;
+          color: #6c757d;
       }
       .hero-section {
-        padding: 6rem 0;
-        background-color: #f8f9fa;
+        position: relative;
+        padding: 8rem 0;
+        background: url('Images/sore.jpg') no-repeat center center;
+        background-size: cover;
+        color: #fff;
+      }
+      .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+      }
+      .hero-section .container {
+        position: relative;
+        z-index: 2;
       }
       .section {
         padding: 5rem 0;
@@ -57,158 +82,237 @@
       .page-section:not(#home) {
         display: none;
       }
+
+      .service-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: .5rem;
+      }
+      
+      .bg-light-orange {
+        background-color: #FFF0E1; 
+      }
+
+      .bg-light-sky-blue {
+        background-color: #E0F7FA;
+      }
+      
+      /* Styles for Testimonial Carousel */
+      .testimonial-carousel-wrapper {
+          position: relative;
+      }
+      .testimonial-scroll-container {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: hidden; /* Hide scrollbar */
+        padding-bottom: 1.5rem;
+        scroll-behavior: smooth; /* Enables smooth scrolling via JS */
+      }
+      .testimonial-wrapper {
+        flex: 0 0 90%;
+        max-width: 90%;
+      }
+
+      @media (min-width: 768px) {
+        .testimonial-wrapper {
+          flex: 0 0 50%;
+          max-width: 50%;
+        }
+      }
+      
+      .scroll-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 10;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+      .scroll-arrow:hover {
+        background-color: #f8f9fa;
+      }
+      .scroll-arrow.prev-arrow {
+        left: -22px;
+      }
+      .scroll-arrow.next-arrow {
+        right: -22px;
+      }
+
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
       <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#home">
-          <img src="Images/Asha.png" class="me-2">
-          <span class="fw-bold">Asha Physiotherapy</span>
+        <a class="navbar-brand d-flex align-items-center nav-link-button" href="#home">
+          <img src="Images/Asha.png" class="me-3">
+          <div>
+            <span class="brand-title">Asha Physiotherapy</span>
+            <small class="brand-slogan">Therapy and Rehabilitation Center</small>
+          </div>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="main-nav">
-          <ul class="navbar-nav mx-auto">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
             <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
             <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
           </ul>
-          <a href="#" class="btn btn-outline-danger">Book Appointment</a>
+          <a href="#appointment" class="btn btn-outline-danger ms-lg-3 nav-link-button">Book Appointment</a>
         </div>
       </div>
     </nav>
 
     <main>
         <section id="home" class="page-section">
-            <div class="hero-section">
+            <div class="hero-section text-center">
+                <div class="container">
+                    <h1 class="display-4 fw-bold">Movement is Life. We Help You Live It Fully.</h1>
+                    <p class="lead my-4">Your trusted partner in recovery and wellness in the heart of Nepal, providing personalized physiotherapy care.</p>
+                    <p class="h4 text-danger mb-4">"आशा छ र त स्वस्थ जीवन छ"</p>
+                    <a href="#services" class="btn btn-danger btn-lg nav-link-button">See All Services <i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="section bg-light-orange">
                 <div class="container">
                     <div class="row align-items-center">
                         <div class="col-md-6">
-                            <h1 class="display-4 fw-bold">Movement is Life. We Help You Live It Fully.</h1>
-                            <p class="lead my-4">Your trusted partner in recovery and wellness in the heart of Nepal, providing personalized physiotherapy care.</p>
-                            <p class="h4 text-danger mb-4">"आशा छ र त स्वस्थ जीवन छ"</p>
-                            <a href="#services" class="btn btn-danger btn-lg nav-link-button">See All Services <i class="bi bi-arrow-right"></i></a>
+                            <h2 class="fw-bold mb-4">Our Key Services</h2>
+                            <ul class="list-group list-group-flush fs-5" style="background-color: transparent;">
+                                <li class="list-group-item" style="background-color: transparent;"><i class="bi bi-arrow-right-short text-danger me-2"></i>Post-Surgery Rehabilitation</li>
+                                <li class="list-group-item" style="background-color: transparent;"><i class="bi bi-arrow-right-short text-danger me-2"></i>Injury Rehabilitation</li>
+                                <li class="list-group-item" style="background-color: transparent;"><i class="bi bi-arrow-right-short text-danger me-2"></i>Pain Management</li>
+                                <li class="list-group-item" style="background-color: transparent;"><i class="bi bi-arrow-right-short text-danger me-2"></i>Neurological Rehabilitation</li>
+                            </ul>
+                            <a href="#services" class="btn btn-link text-danger fw-bold p-0 mt-4 nav-link-button text-decoration-none">
+                                See All Services <i class="bi bi-arrow-right"></i>
+                            </a>
                         </div>
                         <div class="col-md-6 mt-4 mt-md-0">
-                             <img src="Images/sore.jpg" class="img-fluid rounded shadow" alt="Person with sore muscle pain">
+                            <img src="Images/services.png" class="service-image" alt="A collage of physiotherapy services">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section bg-light-sky-blue">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8 text-center">
+                            <h2 class="fw-bold mb-4 text-danger">Why Asha?</h2>
+                            <ul class="list-unstyled fs-5 d-inline-block text-start">
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Experienced and qualified physiotherapists</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Personalized treatment plans tailored to your needs</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Conveniently located in Mahendranagar</li>
+                                <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Trusted by hundreds of patients every month</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="container section">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h2 class="fw-bold mb-4">Why Asha?</h2>
-                        <ul class="list-unstyled fs-5">
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Experienced and qualified physiotherapists</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Personalized treatment plans tailored to your needs</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Conveniently located in Mahendranagar</li>
-                            <li class="mb-3"><i class="bi bi-check-circle-fill text-danger me-2"></i>Trusted by hundreds of patients every month</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-8">
-                        <h2 class="fw-bold mb-4 text-md-center">Our Key Services</h2>
-                         <div class="row text-center">
-                            <div class="col-md-6 col-lg-3 mb-3">
-                                <div class="p-3 border rounded bg-light">Post-Surgery Rehabilitation</div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mb-3">
-                                <div class="p-3 border rounded bg-light">Injury Rehabilitation</div>
-                            </div>
-                             <div class="col-md-6 col-lg-3 mb-3">
-                                <div class="p-3 border rounded bg-light">Pain Management</div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mb-3">
-                                <div class="p-3 border rounded bg-light">Neurological Rehabilitation</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="section bg-light">
+            <div class="section bg-light-orange">
                 <div class="container">
                     <div class="text-center mb-5">
-                        <h2 class="fw-bold">What Our Patients Say </h2>
+                        <h2 class="fw-bold">What Our Patients Say</h2>
                     </div>
-                    <div class="row">
-                        <div class="col-md-6 mb-4">
-                            <div class="testimonial-card h-100">
-                                <blockquote class="fs-5 mb-4">"Thanks to Asha Physiotherapy, I was able to recover quickly after my knee surgery without traveling to Kathmandu." </blockquote>
-                                <footer class="text-end">— Sita B., Mahendranagar </footer>
+                    <div class="testimonial-carousel-wrapper">
+                        <button id="scrollLeftBtn" class="scroll-arrow prev-arrow"><i class="bi bi-chevron-left"></i></button>
+                        <div id="testimonialContainer" class="testimonial-scroll-container">
+                            <div class="testimonial-wrapper px-2">
+                              <div class="testimonial-card h-100">
+                                  <blockquote class="fs-5 mb-4">"Thanks to Asha Physiotherapy, I was able to recover quickly after my knee surgery without traveling to Kathmandu."</blockquote>
+                                  <footer class="text-end">— Sita B., Mahendranagar</footer>
+                              </div>
                             </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                             <div class="testimonial-card h-100">
-                                <blockquote class="fs-5 mb-4">"The care and attention here are unmatched. I highly recommend Asha Physiotherapy!" </blockquote>
-                                <footer class="text-end">— Ramesh K., Kanchanpur </footer>
+                            <div class="testimonial-wrapper px-2">
+                               <div class="testimonial-card h-100">
+                                  <blockquote class="fs-5 mb-4">"The care and attention here are unmatched. I highly recommend Asha Physiotherapy!"</blockquote>
+                                  <footer class="text-end">— Ramesh K., Kanchanpur</footer>
+                              </div>
                             </div>
+                            <div class="testimonial-wrapper px-2">
+                              <div class="testimonial-card h-100">
+                                 <blockquote class="fs-5 mb-4">"The ergonomic advice for my desk job has been a lifesaver. My chronic back pain is finally gone. Highly professional team!"</blockquote>
+                                 <footer class="text-end">— Hari P., Dhangadhi</footer>
+                             </div>
+                           </div>
                         </div>
+                        <button id="scrollRightBtn" class="scroll-arrow next-arrow"><i class="bi bi-chevron-right"></i></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="page-section section">
+        <section id="about" class="page-section section bg-light-orange">
             <div class="container">
                 <div class="row align-items-center mb-5 pb-5">
                     <div class="col-md-7">
-                        <h2 class="fw-bold">About Asha Physiotherapy </h2>
+                        <h2 class="fw-bold">About Asha Physiotherapy</h2>
                         <p>Asha Physiotherapy was established in Mahendranagar, Kanchanpur, to meet the growing demand for quality rehabilitation services in the far-western region of Nepal. For years, patients needing post-surgery care, injury rehabilitation, or pain management had to travel to cities like Kathmandu, as there were no qualified specialists locally. Since opening our doors over three years ago, we have been serving 300+ patients every month, providing expert and compassionate care right here in the community. Our team uses modern techniques and evidence-based practices to help patients regain mobility, recover from injuries, and improve their quality of life without the need for long-distance travel.</p>
                     </div>
                     <div class="col-md-5">
-                        <img src="Images/Build.png" class="img-fluid rounded" alt="A rectangular image of the Asha Physiotherapy clinic">
+                        <img src="Images/Build.png" class=" service-image" alt="A rectangular image of the Asha Physiotherapy clinic">
                     </div>
                 </div>
                 <div class="row align-items-center">
                      <div class="col-md-5">
-                        <img src="https://placehold.co/600x700/cccccc/333333?text=Photo+of+Suraj+Lekhak" class="img-fluid rounded" alt="Photo of Suraj Lekhak, Founder of Asha Physiotherapy">
+                        <img src="https://placehold.co/600x700/cccccc/333333?text=Photo+of+Suraj+Lekhak" class=" service-image" alt="Photo of Suraj Lekhak, Founder of Asha Physiotherapy">
                     </div>
                     <div class="col-md-7">
-                        <h2 class="fw-bold mt-4 mt-md-0">About the Founder </h2>
+                        <h2 class="fw-bold mt-4 mt-md-0">About the Founder</h2>
                         <p>Suraj Lekhak, the founder of Asha Physiotherapy, is a highly qualified physiotherapist with both a Bachelor's and Master's degree in Physiotherapy from M.V. Shetty College, Mangalore, India. He began his career working at a prestigious hospital in Mangalore, where he gained invaluable experience in a well-equipped, fast-paced clinical environment. In 2020, during the COVID-19 pandemic, Suraj returned to Nepal. The absence of physiotherapy clinics in his hometown of Mahendranagar, coupled with the opportunity to be closer to his family, inspired him to establish Asha Physiotherapy, the first dedicated clinic of its kind in the region. Today, Suraj's expertise is so sought after that, in addition to running the clinic, he also provides consulting hours at Mahakali Zonal Hospital and Mantra Hospital, Mahendranagar.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="services" class="page-section section bg-light">
+        <section id="services" class="page-section section bg-light-orange">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="fw-bold">Our Services </h2>
+                    <h2 class="fw-bold">Our Services</h2>
                     <p class="lead">We offer a wide range of therapies to treat various conditions.</p>
                 </div>
 
                 <div class="row services-row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Post-Surgery Rehabilitation </h3>
+                        <h3 class="fw-bold">Post-Surgery Rehabilitation</h3>
                         <ul>
-                            <li>Personalized recovery plans tailored to surgery type </li>
-                            <li>Restore strength and mobility </li>
-                            <li>Focus on pain reduction and functional independence </li>
+                            <li>Personalized recovery plans tailored to surgery type</li>
+                            <li>Restore strength and mobility</li>
+                            <li>Focus on pain reduction and functional independence</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                         <img src="Images/leg.jpg" class="img-fluid rounded" alt="A physiotherapist assisting a patient with leg exercises using resistance bands after surgery.">
+                         <img src="Images/leg.jpg" class=" service-image" alt="A physiotherapist assisting a patient with leg exercises using resistance bands after surgery.">
                     </div>
                 </div>
 
                 <div class="row services-row">
                      <div class="col-md-6 order-md-2">
-                        <h3 class="fw-bold">Injury Rehabilitation </h3>
+                        <h3 class="fw-bold">Injury Rehabilitation</h3>
                         <ul>
-                            <li>Treat sports injuries, fractures, sprains </li>
-                            <li>Prevent future injuries through strengthening exercises </li>
-                            <li>Provide guidance on safe return-to-activity protocols </li>
+                            <li>Treat sports injuries, fractures, sprains</li>
+                            <li>Prevent future injuries through strengthening exercises</li>
+                            <li>Provide guidance on safe return-to-activity protocols</li>
                         </ul>
                     </div>
                     <div class="col-md-6 order-md-1">
-                         <img src="Images/balanceex.jpg" class="img-fluid rounded" alt="A patient doing balance exercises under therapist supervision, with visible injury tape.">
+                         <img src="Images/balanceex.jpg" class=" service-image" alt="A patient doing balance exercises under therapist supervision, with visible injury tape.">
                     </div>
                 </div>
 
@@ -216,75 +320,75 @@
                     <div class="col-md-6">
                         <h3 class="fw-bold">Pain Management</h3>
                         <ul>
-                            <li>Manage arthritis, back and neck pain </li>
-                            <li>Use evidence-based therapies including manual therapy and electrotherapy </li>
+                            <li>Manage arthritis, back and neck pain</li>
+                            <li>Use evidence-based therapies including manual therapy and electrotherapy</li>
                             <li>Educate patients on lifestyle changes to reduce pain</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                         <img src="Images/ultrasound.jpg" class="img-fluid rounded" alt="Close-up of therapist performing manual therapy on a patient's back.">
+                         <img src="Images/ultrasound.jpg" class=" service-image" alt="Close-up of therapist performing manual therapy on a patient's back.">
                     </div>
                 </div>
 
                  <div class="row services-row">
                      <div class="col-md-6 order-md-2">
-                        <h3 class="fw-bold">Neurological Rehabilitation </h3>
+                        <h3 class="fw-bold">Neurological Rehabilitation</h3>
                         <ul>
-                            <li>Support stroke and nerve injury recovery </li>
-                            <li>Improve movement, coordination, and daily living skills </li>
-                            <li>Use specialized techniques like proprioceptive neuromuscular facilitation </li>
+                            <li>Support stroke and nerve injury recovery</li>
+                            <li>Improve movement, coordination, and daily living skills</li>
+                            <li>Use specialized techniques like proprioceptive neuromuscular facilitation</li>
                         </ul>
                     </div>
                     <div class="col-md-6 order-md-1">
-                         <img src="Images/training.jpg" class="img-fluid rounded" alt="Therapist helping a patient with gait training using assistive devices.">
+                         <img src="Images/training.jpg" class=" service-image" alt="Therapist helping a patient with gait training using assistive devices.">
                     </div>
                 </div>
 
                  <div class="row services-row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Pediatric Physiotherapy </h3>
+                        <h3 class="fw-bold">Pediatric Physiotherapy</h3>
                         <ul>
-                            <li>Assist children with developmental delays </li>
-                            <li>Gentle and effective treatments adapted to each child's needs </li>
-                            <li>Engage children with play-based therapy techniques </li>
+                            <li>Assist children with developmental delays</li>
+                            <li>Gentle and effective treatments adapted to each child's needs</li>
+                            <li>Engage children with play-based therapy techniques</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                         <img src="Images/child.jpg" class="img-fluid rounded" alt="Therapist working with a child on floor exercises using colorful therapy toys.">
+                         <img src="Images/child.jpg" class=" service-image" alt="Therapist working with a child on floor exercises using colorful therapy toys.">
                     </div>
                 </div>
 
                  <div class="row services-row">
                      <div class="col-md-6 order-md-2">
-                        <h3 class="fw-bold">Geriatric Physiotherapy </h3>
+                        <h3 class="fw-bold">Geriatric Physiotherapy</h3>
                         <ul>
-                            <li>Maintain mobility and balance </li>
-                            <li>Improve independence and quality of life </li>
-                            <li>Fall prevention strategies and strength training </li>
+                            <li>Maintain mobility and balance</li>
+                            <li>Improve independence and quality of life</li>
+                            <li>Fall prevention strategies and strength training</li>
                         </ul>
                     </div>
                     <div class="col-md-6 order-md-1">
-                         <img src="Images/elder.jpg" class="img-fluid rounded" alt="Elderly patient practicing balance exercises with a therapist's support.">
+                         <img src="Images/elder.jpg" class=" service-image" alt="Elderly patient practicing balance exercises with a therapist's support.">
                     </div>
                 </div>
                 
                 <div class="row services-row">
                     <div class="col-md-6">
-                        <h3 class="fw-bold">Workplace & Ergonomic Therapy </h3>
+                        <h3 class="fw-bold">Workplace & Ergonomic Therapy</h3>
                         <ul>
-                            <li>Correct posture and reduce strain </li>
-                            <li>Exercises for desk workers and repetitive tasks </li>
-                            <li>Provide ergonomic assessments and personalized workplace advice </li>
+                            <li>Correct posture and reduce strain</li>
+                            <li>Exercises for desk workers and repetitive tasks</li>
+                            <li>Provide ergonomic assessments and personalized workplace advice</li>
                         </ul>
                     </div>
                     <div class="col-md-6">
-                         <img src="Images/posture.jpg" class="img-fluid rounded" alt="Therapist showing a patient proper sitting posture at a desk.">
+                         <img src="Images/posture.jpg" class=" service-image" alt="Therapist showing a patient proper sitting posture at a desk.">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="page-section section">
+        <section id="contact" class="page-section section bg-light-orange">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="fw-bold">Get In Touch</h2>
@@ -301,7 +405,53 @@
                         <p>Saturday: Closed</p>
                     </div>
                     <div class="col-md-6">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.486242337775!2d80.178096!3d28.96695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a1a547a4b8f5d7%3A0x8e8e7b8f8e8e7b8f!2sMahendranagar!5e0!3m2!1sen!2snp!4v1678886400000!5m2!1sen!2snp" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded shadow"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.486242337775!2d80.178096!3d28.96695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39a1a547a4b8f5d7%3A0x8e8e7b8f8e8e7b8f!2sMahendranagar!5e0!3m2!1sen!2snp!4v1678886400000!5m2!1sen!2snp0" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded shadow"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="appointment" class="page-section section bg-light-orange">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold">Book an Appointment</h2>
+                            <p class="lead">Fill out the form below and we will get back to you shortly.</p>
+                        </div>
+                        <form>
+                            <div class="mb-3">
+                                <label for="fullName" class="form-label">Full Name</label>
+                                <input type="text" class="form-control" id="fullName" required>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="phone" class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="phone" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="email">
+                                </div>
+                            </div>
+                             <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="appDate" class="form-label">Preferred Date</label>
+                                    <input type="date" class="form-control" id="appDate" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="appTime" class="form-label">Preferred Time</label>
+                                    <input type="time" class="form-control" id="appTime" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="message" class="form-label">Reason for Visit</label>
+                                <textarea class="form-control" id="message" rows="4"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-danger btn-lg">Request Appointment</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -320,31 +470,28 @@
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('.nav-link, .nav-link-button');
             const sections = document.querySelectorAll('.page-section');
-            const navbar = document.querySelector('.navbar-nav');
             const navCollapse = document.querySelector('.navbar-collapse');
             const bsCollapse = new bootstrap.Collapse(navCollapse, {toggle: false});
 
             function showSection(hash) {
-                // Hide all sections
                 sections.forEach(section => {
                     section.style.display = 'none';
                 });
-
-                // Show the target section
                 const targetSection = document.querySelector(hash);
                 if (targetSection) {
                     targetSection.style.display = 'block';
                 }
-
-                // Update active class on nav links
-                document.querySelectorAll('.nav-link').forEach(link => {
+                document.querySelectorAll('.nav-link, .nav-link-button').forEach(link => {
                     link.classList.remove('active');
-                    if (link.getAttribute('href') === hash) {
-                        link.classList.add('active');
+                });
+                document.querySelectorAll(`a[href="${hash}"]`).forEach(activeLink => {
+                    if (activeLink.classList.contains('nav-link')) {
+                        activeLink.classList.add('active');
                     }
                 });
-                
-                // Scroll to top of the page
+                if (hash === '#home') {
+                    document.querySelector('.nav-link[href="#home"]').classList.add('active');
+                }
                 window.scrollTo(0, 0);
             }
 
@@ -353,16 +500,31 @@
                     e.preventDefault();
                     const hash = this.getAttribute('href');
                     showSection(hash);
-
-                    // If on mobile, hide the collapsed navbar
                     if (navCollapse.classList.contains('show')) {
                         bsCollapse.hide();
                     }
                 });
             });
 
-            // Ensure the home section is visible on initial load
             showSection('#home');
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('testimonialContainer');
+            const leftBtn = document.getElementById('scrollLeftBtn');
+            const rightBtn = document.getElementById('scrollRightBtn');
+
+            if (container && leftBtn && rightBtn) {
+                const scrollAmount = container.querySelector('.testimonial-wrapper').offsetWidth;
+
+                rightBtn.addEventListener('click', function() {
+                    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                leftBtn.addEventListener('click', function() {
+                    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+            }
         });
     </script>
 </body>
